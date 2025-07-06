@@ -110,25 +110,19 @@ function resetText() {
 function setupAutoMode() {
   if (globalObserver) {
     //kill existing observer free up some memory
-    console.log("Removing Old Observer");
     globalObserver.disconnect();
   }
   globalObserver = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
       if (mutation.type === "childList") {
         mutation.addedNodes.forEach(function (node) {
-          console.log("Node is", node);
           if (node.nodeType === Node.ELEMENT_NODE) {
             // Store original texts for new content
             const newTextNodes = getTextNodes(node);
-            console.log("New content is being loaded");
-            console.log(newTextNodes);
             newTextNodes.forEach((textNode) => {
               if (!originalTexts.has(textNode)) {
                 originalTexts.set(textNode, textNode.textContent);
               }
-              console.log("Nodes are");
-              console.log(textNode);
               const convertedText = convertAllText(textNode.textContent, mode);
               if (convertedText !== textNode.textContent) {
                 textNode.textContent = convertedText;
