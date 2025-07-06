@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>lowKey</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 320px;
+        padding: 20px;
+        font-family: "Inter", sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header h2 {
+        font-size: 22px;
+        color: #111;
+        margin-bottom: 6px;
+      }
+
+      .header p {
+        font-size: 13px;
+        color: #666;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+      }
+
+      .lowercase-btn {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .lowercase-btn:hover {
+        background-color: #43a047;
+      }
+
+      .uppercase-btn {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      .uppercase-btn:hover {
+        background-color: #1976d2;
+      }
+
+      .reset-btn {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .reset-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      .status {
+        margin-top: 25px;
+        padding: 12px;
+        font-size: 12px;
+        text-align: center;
+        background: #fff;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+      }
+
+      .status a {
+        color: #1da1f2;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .status a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>lowKey</h2>
+      <p>lowKey change website text to lowercase or UPPERCASE easily.</p>
+    </div>
+
+    <div class="controls">
+      <button id="lowercaseBtn" class="lowercase-btn">
+        Convert to lowercase
+      </button>
+      <button id="uppercaseBtn" class="uppercase-btn">
+        Convert to UPPERCASE
+      </button>
+      <button id="resetBtn" class="reset-btn">Reset to Original</button>
+    </div>
+
+    <div class="status" id="status">
+      lowKey follow
+      <a href="https://x.com/noslopinfinite" target="_blank">@noslopinfinite</a>
+      ✨
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
